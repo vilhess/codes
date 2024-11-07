@@ -13,10 +13,10 @@ BATCH_SIZE = 128
 LEARNING_RATE=3e-4
 DEVICE = "mps"
 
-dataset = MNIST(root="data/", train=True, transform=ToTensor(), download=True)
+dataset = MNIST(root="../../../coding/Dataset/", train=True, transform=ToTensor(), download=True)
 trainloader = DataLoader(dataset=dataset, batch_size=BATCH_SIZE, shuffle=True)
 
-model = VAE(in_dim=28*28, hidden_dim=128, latent_dim=2).to(DEVICE)
+model = VAE(in_dim=28*28, hidden_dim=[512, 256], latent_dim=2).to(DEVICE)
 criterion = LossVAE()
 optimizer = torch.optim.Adam(model.parameters(), lr=LEARNING_RATE)
 

@@ -6,19 +6,26 @@ from model import VAE
 
 
 
-DEVICE = "cpu"
+DEVICE = "mps"
 model = torch.load("checkpoint/model.pkl").to(DEVICE)
 
 decoder = model.decoder
 
-z = torch.randn(100, 2).to(device=DEVICE)
-out = decoder(z)
-out = out.view(-1, 1, 28, 28)
+xs = torch.linspace(-10, 10, 50)
+ys = torch.linspace(-10, 10, 50)
 
-grid_image = make_grid(out, nrow=10, normalize=True)
+grid_x, grid_y = torch.meshgrid(xs, ys, indexing="ij")
+Zs = torch.cat([grid_x.reshape(-1, 1), grid_y.reshape(-1, 1)], dim=1).to(DEVICE)
+
+reconstructed = decoder(Zs)
+reconstructed = reconstructed.view(-1, 1, 28, 28)
+
+grid_img = make_grid(reconstructed, nrow=50, normalize=True)
 
 plt.figure(figsize=(10, 10))
-plt.imshow(grid_image.cpu().permute(1, 2, 0).detach(), cmap="gray")
+plt.imshow(grid_img.cpu().permute(1, 2, 0).detach(), cmap="gray", extent=(-10, 10, -10, 10))
+
+
 if not os.path.isdir('figures'):
     os.mkdir('figures')
 plt.savefig('figures/generated.png')
