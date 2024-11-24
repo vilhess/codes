@@ -1,13 +1,14 @@
-# L'IA Décodée - Repository GitHub
+# DecodeTheAI - GitHub Repository
 
-Bienvenue sur le dépôt GitHub officiel de [**L'IA Décodée**](https://www.youtube.com/@IAdécodée), la chaîne YouTube dédiée à la vulgarisation de l'intelligence artificielle et du machine learning.
+Welcome to the official GitHub repository of [**DecodeTheAI**](https://www.youtube.com/@DecodeTheAI), the YouTube channel dedicated to simplifying artificial intelligence and machine learning models.
 
-## 🌐 Chaîne YouTube
+## 🌐 YouTube Channel
 
-Retrouvez toutes mes vidéos sur ma chaîne YouTube : [**L'IA Décodée**](https://www.youtube.com/@IAdécodée). Je publie régulièrement des vidéos expliquant la théorie derrière les modèles d'IA et ensuite on implémente ces modèles en Python
-## 📂 Contenu du Repository
+Find all my videos on my YouTube channel: [**DecodeTheAI**](https://www.youtube.com/@DecodeTheAI). I regularly publish videos explaining the theory behind AI models, followed by implementing these models in Python.
 
-Ce dépôt contient les **codes sources** et les **notebooks** utilisés dans chaque vidéo de la chaîne. Il vous permet de suivre les tutoriels, d'expérimenter par vous-même et d'explorer plus en profondeur les projets abordés.
+## 📂 Repository Content
 
-### Structure du dépôt
-- Chaque dossier correspond à une vidéo spécifique et contient le code source associé.
+This repository contains the **source codes** and **notebooks** used in each video on the channel. It allows you to follow the tutorials, experiment on your own, and delve deeper into the discussed projects.
+
+### Repository Structure
+- Each folder corresponds to a specific video and includes the associated source code.
