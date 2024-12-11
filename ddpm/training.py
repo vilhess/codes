@@ -10,7 +10,7 @@ from copy import deepcopy
 from UNet import UNet
 from DDPM import DDPM
 
-DEVICE="mps"
+DEVICE="cuda"
 
 transform = Compose([
     ToTensor(),
@@ -20,10 +20,10 @@ transform = Compose([
 n_steps, min_beta, max_beta = 1000, 1e-4, 0.02
 ddpm = DDPM(UNet(n_steps), n_steps=n_steps, min_beta=min_beta, max_beta=max_beta, device=DEVICE)
 
-trainset = FashionMNIST(root="../../../coding/Dataset/", transform=transform)
+trainset = FashionMNIST(root="~/Bureau/Datasets", transform=transform, download=True)
 dataloader = DataLoader(trainset, batch_size=64, shuffle=True)
 
-EPOCHS=100
+EPOCHS=10
 LEARNING_RATE=3e-4
 
 criterion = nn.MSELoss()
